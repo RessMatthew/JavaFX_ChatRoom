@@ -64,8 +64,9 @@ public class WorkServer extends Thread {
                     currentTime = newTime;
                 }
                 readLine = reader.readLine();
-                if (readLine == null)
+                if (readLine == null) {
                     logOut();
+                }
                 handleMessage(readLine);
                 sentMessageToClient();
                 if (isLogOut) {
@@ -149,8 +150,9 @@ public class WorkServer extends Thread {
                 }
                 if (!find) {
                     map.put(COM_RESULT, FAILED);
-                    if (!map.containsKey(COM_DESCRIPTION))
+                    if (!map.containsKey(COM_DESCRIPTION)) {
                         map.put(COM_DESCRIPTION, username + "未注册");
+                    }
                     writer.println(gson.toJson(map)); //返回消息给服务器
                 }
                 break;
@@ -227,25 +229,28 @@ public class WorkServer extends Thread {
      */
     private void sentMessageToClient() {
         String message;
-        if (workUser != null)
+        if (workUser != null) {
             while ((message = workUser.getMsg()) != null) {
                 writer.println(message); //write it will  auto flush.
                 System.out.println(workUser.getUserName() + "的数据仓发送 message: " + message + "剩余 size" + workUser.session.size());
             }
+        }
     }
 
     /**
      * the  method to release socket's resource.
      */
     private void logOut() {
-        if (workUser == null)
+        if (workUser == null) {
             return;
+        }
         System.out.println("用户 " + workUser.getUserName() + " 已经离线");
         // still hold this user and change it's status
         workUser.setStatus("offline");
         for (ServerUser u : users) {
-            if (u.getUserName().equals(workUser.getUserName()))
+            if (u.getUserName().equals(workUser.getUserName())) {
                 u.setStatus("offline");
+            }
         }
         broadcast(getGroup(), COM_LOGOUT);
         isLogOut = true;

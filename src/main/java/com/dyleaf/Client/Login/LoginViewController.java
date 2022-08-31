@@ -67,6 +67,8 @@ public class LoginViewController implements ControlledStage, Initializable {
     public void logIn() {
         StringBuffer result = new StringBuffer();
         if (model.CheckLogin(txtUsername.getText(), txtHostName.getText(),textPassword.getText(), result, 0)) {
+            System.out.println(txtUsername.getText());
+            System.out.println(txtHostName.getText());
             goToMain();
         } else {
             showError(result.toString());

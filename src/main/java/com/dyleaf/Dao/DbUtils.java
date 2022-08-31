@@ -71,9 +71,15 @@ public class DbUtils {
      */
     public static void close(ResultSet rs,Statement stat,Connection conn){
         try {
-            if(rs!=null)rs.close();
-            if(stat!=null)stat.close();
-            if(conn!=null)conn.close();
+            if(rs!=null) {
+                rs.close();
+            }
+            if(stat!=null) {
+                stat.close();
+            }
+            if(conn!=null) {
+                conn.close();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

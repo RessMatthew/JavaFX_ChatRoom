@@ -12,22 +12,11 @@
 - ~~实现文件传输~~
 - ~~文件记录~~
 
-#### 功能展示
-- login
-
-![](http://ox6e8ykxi.bkt.clouddn.com/18-5-6/75566823.jpg)
-
-- chatroom
-
-![](http://ox6e8ykxi.bkt.clouddn.com/18-5-6/47280334.jpg)
-
-![](http://ox6e8ykxi.bkt.clouddn.com/18-5-6/37373360.jpg)
-
-![](http://ox6e8ykxi.bkt.clouddn.com/18-5-6/47028216.jpg)
-
-- 表情包
-
-![](http://ox6e8ykxi.bkt.clouddn.com/18-5-6/16077950.jpg)
+#### 使用
+1.无需额外配置，已连接公网数据库
+2.运行Client目录下MainApp
+3.hostname输入1.12.249.224
+4.（用户名，密码）：用户1（123，123），用户2（456，456），用户3（test，test）
 
 #### 附注
-设计思想：[java 聊天室WeChat](http://www.cnblogs.com/Dyleaf/p/7955145.html) 
+参考：[java 聊天室WeChat](http://www.cnblogs.com/Dyleaf/p/7955145.html) 
