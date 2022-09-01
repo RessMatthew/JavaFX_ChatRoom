@@ -194,7 +194,7 @@ public class ClientModel {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        MainView.getInstance().getLabUserCoumter().setText("服务器在线人数为" + finalOnlineUserNum);
+                        MainView.getInstance().getLabUserCoumter().setText("在线人数：" + finalOnlineUserNum);
                     }
                 });
                 break;

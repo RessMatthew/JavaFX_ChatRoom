@@ -7,7 +7,7 @@
 }
 
 #userBtn{
-    -fx-graphic: url("image/user.png");
+    -fx-graphic: url("image/user(1).png");
     -fx-background-color:white;
     -fx-background-size: 100;
     -fx-max-height: 100;

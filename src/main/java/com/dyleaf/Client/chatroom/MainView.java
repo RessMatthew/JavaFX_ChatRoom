@@ -49,8 +49,8 @@ public class MainView implements ControlledStage, Initializable {
     public ListView chatWindow;
     @FXML
     public ListView userGroup;
-    @FXML
-    public Label labUserName;
+//    @FXML
+//    public Label labUserName;
     @FXML
     public Label labChatTip;
     @FXML
@@ -103,7 +103,7 @@ public class MainView implements ControlledStage, Initializable {
         userGroup.setItems(uselist);
         chatWindow.setItems(chatReccder);
         thisUser = model.getThisUser();
-        labUserName.setText("Welcome " + model.getThisUser() + "!");
+//        labUserName.setText("Welcome " + model.getThisUser() + "!");
 
         //发送按钮的逻辑处理函数
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
@@ -146,8 +146,7 @@ public class MainView implements ControlledStage, Initializable {
                 if (!seletUser.equals(user.getUserName())) {
                     model.setChatUser(user.getUserName());
                     seletUser = user.getUserName();
-                    labChatTip.setText("Chatting with " + seletUser);
-                    //
+                    labChatTip.setText(seletUser);
                 }
             }
         });

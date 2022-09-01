@@ -11,8 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="修复小bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoginViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoginViewStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/head.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/head.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,19 +336,12 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Coding\javafx\javaFX\src\main\resources\image" />
+      <recent name="E:\Coding\javafx\javaFX\src\main\resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="F:\WeChat\src\com\image" />
       <recent name="F:\WeChat\src\com\dyleaf\Client\stage" />
-      <recent name="F:\WeChat\src\com\dyleaf\Client\emojis" />
-      <recent name="F:\WeChat\src\com\resource" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="MVC" />
-      <recent name="EXP4" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao" />
@@ -353,6 +349,13 @@
       <recent name="F:\WeChat\src\com" />
       <recent name="F:\WeChat" />
       <recent name="F:\WeChat\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="MVC" />
+      <recent name="EXP4" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainApp">
@@ -489,6 +492,7 @@
       <workItem from="1661966078229" duration="4612000" />
       <workItem from="1662015445562" duration="526000" />
       <workItem from="1662026576778" duration="714000" />
+      <workItem from="1662044424553" duration="1258000" />
     </task>
     <task id="LOCAL-00001" summary="新增文件传输&#10;新增些许注释">
       <created>1662031929969</created>

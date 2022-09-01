@@ -1,0 +1,27 @@
+#btnEmoji{
+    -fx-graphic: url("image/emoji.png");
+}
+#btnEmoji:hover {
+    -fx-opacity: 0.5;
+}
+#btnEmoji:pressed {
+    -fx-opacity: 0.2;
+}
+
+#btnFile{
+    -fx-graphic: url("image/file.png");
+}
+#btnFile:hover {
+    -fx-opacity: 0.5;
+}
+#btnFile:pressed {
+    -fx-opacity: 0.2;
+}
+
+#btnSend:hover {
+    -fx-opacity: 0.5;
+}
+#btnSend:pressed {
+    -fx-opacity: 0.2;
+}
+
