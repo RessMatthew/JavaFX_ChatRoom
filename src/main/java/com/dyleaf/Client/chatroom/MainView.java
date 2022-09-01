@@ -156,7 +156,7 @@ public class MainView implements ControlledStage, Initializable {
         chatWindow.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             Message message = (Message) newValue;
             if(message!=null){
-                if( message.getType().equals(FILETYPE)) {
+                if( (message.getType()!=null) && (message.getType().equals(FILETYPE) ) ) {
 
                     System.out.println("You are selecting ==> user:" + message.getSpeaker() + " time:" + message.getTimer());
 
@@ -297,7 +297,7 @@ public class MainView implements ControlledStage, Initializable {
                         HBox hbox = new HBox();
                         //聊天的内容
                         TextFlow txtContent = null;
-                        if(item.getType().equals(FILETYPE)){
+                        if( (item.getType()!=null)&&(item.getType().equals(FILETYPE) ) ){
                             txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[文件]： "+item.getContent()));
                         }else {
                             //如果不是文件类型，则正常渲染。

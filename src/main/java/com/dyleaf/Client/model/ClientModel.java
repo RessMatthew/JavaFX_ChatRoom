@@ -128,8 +128,11 @@ public class ClientModel {
                 String message;
                 while (isConnect) {
                     message = reader.readLine();
-                    // System.out.println("读取服务器信息" + message);
-                    handleMessage(message);
+                    if(message!=null){
+                        // System.out.println("读取服务器信息" + message);
+                        handleMessage(message);
+                    }
+
                 }
             } catch (IOException e) {
 
