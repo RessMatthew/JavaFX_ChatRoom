@@ -216,6 +216,7 @@ public class MainView implements ControlledStage, Initializable {
             HashMap map = new HashMap();
             if (pattern == GROUP) {
                 map.put(COMMAND, COM_CHATALL);
+                map.put(SPEAKER, model.getThisUser());
             } else if (pattern == SINGLE) {
                 map.put(COMMAND, COM_CHATWITH);
                 map.put(RECEIVER, seletUser);

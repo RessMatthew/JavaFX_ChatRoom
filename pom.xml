@@ -22,10 +22,20 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
+                    <classesDirectory>target/classes</classesDirectory>
                     <archive>
+                        <!-- manifest 标签表示 jar包内的 MANIFEST.MF 清单配置文件的内容 -->
                         <manifest>
+                            <!-- 1.mainClass 标签指定程序的入口类 -->
                             <mainClass>com.dyleaf.Server.LocalServer</mainClass>
+                            <useUniqueVersions>false</useUniqueVersions>
+                            <addClasspath>true</addClasspath>
+                            <!-- 2.classpathPerfix 标签 表示指定第三方依赖的目录名，和目标jar包同级 -->
+                            <classpathPrefix>libs/</classpathPrefix>
                         </manifest>
+                        <manifestEntries>
+                            <Class-Path>.</Class-Path>
+                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
@@ -44,7 +54,7 @@
                             <type>jar</type>
                             <includeTypes>jar</includeTypes>
                             <outputDirectory>
-                                ${project.build.directory}/lib
+                                ${project.build.directory}/libs
                             </outputDirectory>
                         </configuration>
                     </execution>
