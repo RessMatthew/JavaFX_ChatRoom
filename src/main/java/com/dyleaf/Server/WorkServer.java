@@ -164,6 +164,9 @@ public class WorkServer extends Thread {
                 map.put(RECEIVER, gsonMap.get(RECEIVER));
                 map.put(CONTENT, gsonMap.get(CONTENT));
                 map.put(TIME, getFormatDate());
+                //file
+                map.put(MESSAGETYPE,gsonMap.get(MESSAGETYPE));
+                map.put(FILECONTENT,gsonMap.get(FILECONTENT));
                 for (ServerUser u : users) {
                     if (u.getUserName().equals(receiver)) {
                         u.addMsg(gson.toJson(map));
@@ -178,6 +181,10 @@ public class WorkServer extends Thread {
                 map.put(SPEAKER, workUser.getUserName());
                 map.put(TIME, getFormatDate());
                 map.put(CONTENT, gsonMap.get(CONTENT));
+                //file
+                map.put(MESSAGETYPE,gsonMap.get(MESSAGETYPE));
+                map.put(FILECONTENT,gsonMap.get(FILECONTENT));
+
                 broadcast(gson.toJson(map), COM_MESSAGEALL);
                 break;
             default:

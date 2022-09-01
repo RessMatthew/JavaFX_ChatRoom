@@ -32,6 +32,7 @@ public class ClientModel {
     private String thisUser;
     private Gson gson;
 
+    //                    用户名, 消息队列
     private LinkedHashMap<String, ArrayList<Message>> userSession;   //用户消息队列存储用
     private Thread keepalive = new Thread(new KeepAliveWatchDog());
     private Thread keepreceive = new Thread(new ReceiveWatchDog());
@@ -209,10 +210,15 @@ public class ClientModel {
                 String receiver = (String) gsonMap.get(RECEIVER);
                 String time = (String) gsonMap.get(TIME);
                 String content = (String) gsonMap.get(CONTENT);
+                String type = (String) gsonMap.get(MESSAGETYPE);
+                String fileContent = (String)gsonMap.get(FILECONTENT);
                 m = new Message();
                 m.setSpeaker(speaker);
                 m.setContent(content);
                 m.setTimer(time);
+                //file
+                m.setType(type);
+                m.setFileContent(fileContent);
                 if (thisUser.equals(receiver)) {
                     if (!chatUser.equals(speaker)) {
                         for (int i = 0; i < userList.size(); i++) {

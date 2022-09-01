@@ -19,18 +19,23 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.File;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import static com.dyleaf.Utils.Constants.*;
 import static com.dyleaf.Utils.Constants.CONTENT;
+import static com.dyleaf.Utils.BinUtil.*;
 
 public class MainView implements ControlledStage, Initializable {
 
@@ -51,6 +56,9 @@ public class MainView implements ControlledStage, Initializable {
     @FXML
     public Label labUserCoumter;
 
+//    @FXML
+//    public BorderPane root;
+
     private Gson gson = new Gson();
     private StageController stageController;
     private ClientModel model;
@@ -61,10 +69,21 @@ public class MainView implements ControlledStage, Initializable {
     private ObservableList<ClientUser> uselist;
     private ObservableList<Message> chatReccder;
 
+    private Stage stage;
+
+
     public MainView() {
         super();
+//        stage = getStage();
         instance = this;
     }
+
+//    private Stage getStage() {
+//        if (stage == null) {
+//            stage = (Stage) root.getScene().getWindow();
+//        }
+//        return stage;
+//    }
 
     public static MainView getInstance() {
         return instance;
@@ -85,6 +104,7 @@ public class MainView implements ControlledStage, Initializable {
         chatWindow.setItems(chatReccder);
         thisUser = model.getThisUser();
         labUserName.setText("Welcome " + model.getThisUser() + "!");
+
         //发送按钮的逻辑处理函数
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -93,6 +113,8 @@ public class MainView implements ControlledStage, Initializable {
                     HashMap map = new HashMap();
                     map.put(COMMAND, COM_CHATALL);
                     map.put(CONTENT, textSend.getText().trim());
+                    map.put(MESSAGETYPE,ORDINARYMESSAGE);
+                    map.put(FILECONTENT,"");
                     model.sentMessage(gson.toJson(map));
                 } else if (pattern == SINGLE) {
                     HashMap map = new HashMap();
@@ -100,6 +122,8 @@ public class MainView implements ControlledStage, Initializable {
                     map.put(RECEIVER, seletUser);
                     map.put(SPEAKER, model.getThisUser());
                     map.put(CONTENT, textSend.getText().trim());
+                    map.put(MESSAGETYPE,ORDINARYMESSAGE);
+                    map.put(FILECONTENT,"");
                     model.sentMessage(gson.toJson(map));
                 }
                 textSend.setText("");
@@ -127,13 +151,33 @@ public class MainView implements ControlledStage, Initializable {
                 }
             }
         });
+
+        //选择聊天消息
         chatWindow.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             Message message = (Message) newValue;
-            System.out.println("You are selecting ==> user:" + message.getSpeaker() + " time:" + message.getTimer());
+            if(message!=null){
+                if( message.getType().equals(FILETYPE)) {
+
+                    System.out.println("You are selecting ==> user:" + message.getSpeaker() + " time:" + message.getTimer());
+
+                    FileChooser fileChooser = new FileChooser();
+                    fileChooser.setTitle("Save file");
+                    fileChooser.setInitialFileName(message.getContent());
+                    File file = fileChooser.showSaveDialog(stage);
+                    System.out.println(file);
+                    if(file != null){
+                        binToFile(message.getFileContent(), file.getName(),file.getParent());
+//                        System.out.println("Path"+file.getPath());
+//                        System.out.println("Parent"+file.getParent());
+                    }
+
+
+                }
+            }
         });
 
 
-        //聊天消息展示框
+        //右边聊天消息展示框
         chatWindow.setCellFactory(new Callback<ListView, ListCell>() {
             @Override
             public ListCell call(ListView param) {
@@ -158,6 +202,34 @@ public class MainView implements ControlledStage, Initializable {
         stageController.setStage(MainApp.EmojiSelectorID);
     }
 
+    //文件传输按钮
+    @FXML
+    public void onFileBtnClicked() {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save file");
+        File file = fileChooser.showOpenDialog(stage);
+        System.out.println(file);
+        if(file != null){
+            String fileContent = fileToBinStr(file);
+
+            HashMap map = new HashMap();
+            if (pattern == GROUP) {
+                map.put(COMMAND, COM_CHATALL);
+            } else if (pattern == SINGLE) {
+                map.put(COMMAND, COM_CHATWITH);
+                map.put(RECEIVER, seletUser);
+                map.put(SPEAKER, model.getThisUser());
+            }
+            map.put(CONTENT, file.getName());
+            map.put(MESSAGETYPE,FILETYPE);
+            map.put(FILECONTENT,fileContent);
+            model.sentMessage(gson.toJson(map));
+        }
+
+
+    }
+
     //获取聊天输入框
     public TextArea getMessageBoxTextArea() {
         return textSend;
@@ -169,6 +241,8 @@ public class MainView implements ControlledStage, Initializable {
     }
 
 
+
+    //-------------------渲染部分-----------------------
 
     //左边的一个个单个的联系人
     public static class UserCell extends ListCell<ClientUser> {
@@ -221,7 +295,14 @@ public class MainView implements ControlledStage, Initializable {
                     if (item != null) {
                         VBox box = new VBox();
                         HBox hbox = new HBox();
-                        TextFlow txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode(item.getContent()));
+                        //聊天的内容
+                        TextFlow txtContent = null;
+                        if(item.getType().equals(FILETYPE)){
+                            txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[文件]： "+item.getContent()));
+                        }else {
+                            //如果不是文件类型，则正常渲染。
+                            txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode(item.getContent()));
+                        }
                         //聊天内容上方标签显示用户名字和发送时间
                         Label labUser = new Label(item.getSpeaker() + "[" + item.getTimer() + "]");
                         //聊天内容上方标签字体颜色和背景颜色

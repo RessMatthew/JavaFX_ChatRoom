@@ -15,6 +15,14 @@ public class Message implements Serializable{
     private String timer = null;
     private ArrayList<String>imageList = null;
 
+    //---------------文件传输部分-----------------------
+
+    private String type = null;
+
+    private String fileContent = null;
+
+    //------------------------------------------------
+
     public ArrayList<String> getImageList() {
         return imageList;
     }
@@ -46,4 +54,27 @@ public class Message implements Serializable{
     public void setContent(String content) {
         this.content = content;
     }
+
+
+    //---------------文件传输部分-----------------------
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getFileContent() {
+        return fileContent;
+    }
+
+    public void setFileContent(String fileContent) {
+        this.fileContent = fileContent;
+    }
+
+    //------------------------------------------------
+
+
 }

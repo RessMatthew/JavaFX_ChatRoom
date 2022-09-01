@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dyleaf.Client.chatroom.MainView">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dyleaf.Client.chatroom.MainView">
    <left>
       <VBox prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -82,11 +82,13 @@
                   <TextArea fx:id="textSend" prefHeight="100.0" prefWidth="200.0" />
                   <HBox prefHeight="50.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Button fx:id="btnEmoji" mnemonicParsing="false" onAction="#onEmojiBtnClcked" style="-fx-background-color: orange;" text="emoji">
+                        <Button fx:id="btnFile" mnemonicParsing="false" onAction="#onFileBtnClicked" style="-fx-background-color: orange;" text="sendfile" >
                            <HBox.margin>
-                              <Insets left="250.0" />
+                              <Insets left="100.0" />
                            </HBox.margin>
                         </Button>
+                        <Button fx:id="btnEmoji" mnemonicParsing="false" onAction="#onEmojiBtnClcked" style="-fx-background-color: orange;" text="emoji" />
+
                         <Button fx:id="btnSend" mnemonicParsing="false" style="-fx-background-color: orange;" text="send" />
                      </children>
                   </HBox>

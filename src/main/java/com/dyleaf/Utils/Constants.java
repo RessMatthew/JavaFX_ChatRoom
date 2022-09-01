@@ -2,9 +2,19 @@ package com.dyleaf.Utils;
 
 
 public class Constants {
+
+    //----------------文件类型常量----------------
+
+    public final static String FILETYPE = "file";
+
+    public final static String ORDINARYMESSAGE = "odinaryMessage";
+
+    //-------------私聊还是公屏发消息----------------
     public final static boolean SINGLE = true;
     public final static boolean GROUP = false;
 
+
+    //--------------socket传输map键-----------------
     public final static int SUCCESS = 0x01;
     public final static int FAILED = 0x02;
 
@@ -25,4 +35,12 @@ public class Constants {
     public final static int COM_CHATALL = 0x27;
     public final static int COM_KEEP = 0x28;
     public final static int COM_MESSAGEALL = 0X29;
+
+    public final static int MESSAGETYPE = 0x30;
+
+    public final static int FILECONTENT = 0x31;
+
+
+
+
 }
