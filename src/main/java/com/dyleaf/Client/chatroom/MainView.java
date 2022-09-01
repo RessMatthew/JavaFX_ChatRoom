@@ -73,7 +73,6 @@ public class MainView implements ControlledStage, Initializable {
     @Override
     public void setStageController(StageController stageController) {
         this.stageController = stageController;
-        ;
     }
 
     @Override
@@ -86,6 +85,7 @@ public class MainView implements ControlledStage, Initializable {
         chatWindow.setItems(chatReccder);
         thisUser = model.getThisUser();
         labUserName.setText("Welcome " + model.getThisUser() + "!");
+        //发送按钮的逻辑处理函数
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -106,6 +106,7 @@ public class MainView implements ControlledStage, Initializable {
             }
         });
 
+        //左边选择聊天用户
         userGroup.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             ClientUser user = (ClientUser) newValue;
             System.out.println("You are selecting " + user.getUserName());
@@ -122,11 +123,17 @@ public class MainView implements ControlledStage, Initializable {
                     model.setChatUser(user.getUserName());
                     seletUser = user.getUserName();
                     labChatTip.setText("Chatting with " + seletUser);
-                    // TODO: 2017/11/29
+                    //
                 }
             }
         });
+        chatWindow.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            Message message = (Message) newValue;
+            System.out.println("You are selecting ==> user:" + message.getSpeaker() + " time:" + message.getTimer());
+        });
 
+
+        //聊天消息展示框
         chatWindow.setCellFactory(new Callback<ListView, ListCell>() {
             @Override
             public ListCell call(ListView param) {
@@ -134,6 +141,7 @@ public class MainView implements ControlledStage, Initializable {
             }
         });
 
+        //左边联系人
         userGroup.setCellFactory(new Callback<ListView, ListCell>() {
             @Override
             public ListCell call(ListView param) {
@@ -143,21 +151,26 @@ public class MainView implements ControlledStage, Initializable {
     }
 
 
+    //点击表情按钮打开新的窗口
     @FXML
     public void onEmojiBtnClcked() {
         stageController.loadStage(MainApp.EmojiSelectorID, MainApp.EmojiSelectorRes);
         stageController.setStage(MainApp.EmojiSelectorID);
     }
 
+    //获取聊天输入框
     public TextArea getMessageBoxTextArea() {
         return textSend;
     }
 
+    //服务器总人数
     public Label getLabUserCoumter() {
         return labUserCoumter;
     }
 
 
+
+    //左边的一个个单个的联系人
     public static class UserCell extends ListCell<ClientUser> {
         @Override
         protected void updateItem(ClientUser item, boolean empty) {
@@ -196,6 +209,7 @@ public class MainView implements ControlledStage, Initializable {
         }
     }
 
+//    右边的一条条消息
     public static class ChatCell extends ListCell<Message> {
         @Override
         protected void updateItem(Message item, boolean empty) {
@@ -208,12 +222,16 @@ public class MainView implements ControlledStage, Initializable {
                         VBox box = new VBox();
                         HBox hbox = new HBox();
                         TextFlow txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode(item.getContent()));
+                        //聊天内容上方标签显示用户名字和发送时间
                         Label labUser = new Label(item.getSpeaker() + "[" + item.getTimer() + "]");
+                        //聊天内容上方标签字体颜色和背景颜色
                         labUser.setStyle("-fx-background-color: #7bc5cd; -fx-text-fill: white;");
+                        //用户头像
                         ImageView image = new ImageView(new Image("image/head.png"));
                         image.setFitHeight(20);
                         image.setFitWidth(20);
                         hbox.getChildren().addAll(image, labUser);
+                        //己方发送的消息显示在右边
                         if (item.getSpeaker().equals(thisUser)) {
                             txtContent.setTextAlignment(TextAlignment.RIGHT);
                             hbox.setAlignment(Pos.CENTER_RIGHT);
