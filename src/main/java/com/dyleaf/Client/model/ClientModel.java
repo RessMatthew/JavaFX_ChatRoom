@@ -278,8 +278,9 @@ public class ClientModel {
      * @param buf
      * @return
      */
-    public boolean CheckLogin(String username, String IP, String password, StringBuffer buf, int type) {
-        this.IP = IP; //bind server IP
+    public boolean CheckLogin(String username, String password, StringBuffer buf, int type) {
+        //this.IP = IP; //bind server IP
+        this.IP="1.12.249.224";
         Map<Integer, Object> map;
         try {
             //针对多次尝试登录

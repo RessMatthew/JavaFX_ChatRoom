@@ -27,8 +27,6 @@ public class LoginViewController implements ControlledStage, Initializable {
     @FXML
     TextField txtUsername;
     @FXML
-    TextField txtHostName;
-    @FXML
     Button btn_login;
     @FXML
     ImageView imageView;
@@ -66,9 +64,7 @@ public class LoginViewController implements ControlledStage, Initializable {
 
     public void logIn() {
         StringBuffer result = new StringBuffer();
-        if (model.CheckLogin(txtUsername.getText(), txtHostName.getText(),textPassword.getText(), result, 0)) {
-            System.out.println(txtUsername.getText());
-            System.out.println(txtHostName.getText());
+        if (model.CheckLogin(txtUsername.getText(), textPassword.getText(), result, 0)) {
             goToMain();
         } else {
             showError(result.toString());
@@ -102,7 +98,7 @@ public class LoginViewController implements ControlledStage, Initializable {
 
     public void signUp(ActionEvent actionEvent) {
         StringBuffer result = new StringBuffer();
-        if (model.CheckLogin(txtUsername.getText(), txtHostName.getText(),textPassword.getText(), result, 1)) {
+        if (model.CheckLogin(txtUsername.getText(), textPassword.getText(), result, 1)) {
             goToMain();
         } else {
             showError(result.toString());

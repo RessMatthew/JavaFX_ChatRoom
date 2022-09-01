@@ -10,13 +10,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/host.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/psw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/80a5789a-fe3d-4b33-b7a1-6ba827a4c7d1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata.keystream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/_metadata_/metadata_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/storage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/storage_v2/_src_/database/dyleaf.c1mAsQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1626095d-7f3f-404e-bac8-b34efcdbf6b8/storage_v2/_src_/database/dyleaf.c1mAsQ/schema/dbo.sYMBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata.keystream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8a21ba38-4790-42d3-bde9-831bdf106ac6/_metadata_/metadata_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata.keystream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/_metadata_/metadata_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b1a7a973-1182-4e23-b92a-93137f65f83f/storage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata.keystream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/_metadata_/metadata_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dfb7b8f7-e797-4ce8-9df1-a8f8f9a6eab4/storage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata.keystream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/_metadata_/metadata_i.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/storage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/storage_v2/_src_/database/dyleaf.c1mAsQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6f62144-c1e2-4b6f-afda-b5fc66bbf05f/storage_v2/_src_/database/dyleaf.c1mAsQ/schema/dbo.sYMBAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/Login/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/Login/LoginViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/LoginViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/LoginViewStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/cross.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/cross.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/line.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/line.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,6 +372,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Coding/javafx/javaFX/src/main/resources/image",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
@@ -482,6 +535,8 @@
       <workItem from="1525607359397" duration="1011000" />
       <workItem from="1661936390186" duration="8971000" />
       <workItem from="1661966078229" duration="4612000" />
+      <workItem from="1662015445562" duration="526000" />
+      <workItem from="1662026576778" duration="714000" />
     </task>
     <servers />
   </component>

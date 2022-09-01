@@ -6,6 +6,16 @@
     -fx-opacity: 1;
 }
 
+#userBtn{
+    -fx-graphic: url("image/user.png");
+    -fx-background-color:white;
+    -fx-background-size: 100;
+    -fx-max-height: 100;
+    -fx-min-height: 100;
+    -fx-max-width: 100;
+    -fx-min-width: 100;
+}
+
 #closeBtn:hover {
     -fx-opacity: 0.5;
 }
@@ -17,20 +27,23 @@
     -fx-graphic: url("image/line.png");
     -fx-background-color: transparent;
     -fx-opacity: 1;
-
 }
 
 #minimizedBtn:hover {
     -fx-opacity: 0.5;
 }
+#minimizedBtn:pressed {
+    -fx-opacity: 0.2;
+}
 
 #customBtn{
     -fx-color: #ffffff;
     -fx-padding: 5px 12px;
-    -fx-background-color: linear-gradient(to bottom, #ffe49e 0%,#ffb700 3%,#ffad00 35%,#ff9000 97%,#e27f00 100%);
+    /*-fx-background-color: linear-gradient(to bottom, #ffe49e 0%,#ffb700 3%,#ffad00 35%,#ff9000 97%,#e27f00 100%);*/
+    -fx-background-color: #16b3ed;
     -fx-font-family: 'Open Sans', sans-serif;
     -fx-font-size: 12px;
-    border-radius: 3px;
+    border-radius: 8px;
     cursor: pointer;
     -fx-opacity: 1;
 }
@@ -44,7 +57,22 @@
     -fx-padding: 5px 12px;
     -fx-spacing: 10px;
     -fx-start-margin: 10px;
-    -fx-background-color: linear-gradient(to bottom, #ffe49e 0%,#ffb700 3%,#ffad00 35%,#ff9000 97%,#e27f00 100%);
+    /*-fx-background-color: linear-gradient(to bottom, #ffe49e 0%,#ffb700 3%,#ffad00 35%,#ff9000 97%,#e27f00 100%);*/
+    -fx-background-color: #16b3ed;
     -fx-font-family: 'Open Sans', sans-serif;
     -fx-cursor: hand;
+}
+
+#back{
+    -fx-background-image: url("image/background.png");
+}
+
+#btn_login{
+    -fx-opacity: 1;
+}
+#btn_login:hover{
+    -fx-opacity: 0.5;
+}
+#btn_login:pressed{
+    -fx-opacity: 0.2;
 }

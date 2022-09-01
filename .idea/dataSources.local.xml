@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-222.3739.54">
+  <component name="dataSourceStorageLocal" created-in="IU-221.6008.13">
     <data-source name="wechat@localhost" uuid="80a5789a-fe3d-4b33-b7a1-6ba827a4c7d1">
       <database-info product="MySQL" version="5.7.22-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MYSQL" exact-version="5.7.22">
         <extra-name-characters>#@</extra-name-characters>
