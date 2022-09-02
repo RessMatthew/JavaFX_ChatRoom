@@ -78,7 +78,7 @@ public class AudioRecorder extends Thread {
             AudioFormat.Encoding encoding =  new AudioFormat.Encoding("PCM_SIGNED");
             //编码格式，采样率，每个样本的位数，声道，帧长（字节），帧数，是否按big-endian字节顺序存储
             //Windows
-            //AudioFormat audioFormat = new AudioFormat(16000, 16, 1, true, false);
+            //AudioFormat format = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, 44100, 16, 2, 4, 44100, false);
             //Mac
             AudioFormat format = new AudioFormat(16000, 16, 1, true, false);
             SourceDataLine auline = null;

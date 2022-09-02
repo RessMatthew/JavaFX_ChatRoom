@@ -175,8 +175,14 @@ public class MainView implements ControlledStage, Initializable {
                     }
                 }else if( (message.getType()!=null) && (message.getType().equals(VOICETYPE))){
                     System.out.println("-------音频消息-------");
+                    //把str转换为.wav并存储
                     AudioBase64Util.strToWar(message.getVoiceContent());
                     //测试播放
+//                    try {
+//                        Thread.sleep(3000);//这里是设置录音的时长
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                     AudioRecorder audioRecorder = new AudioRecorder("test.wav");
                     audioRecorder.play("test.wav");
                 }
@@ -251,11 +257,15 @@ public class MainView implements ControlledStage, Initializable {
     //新建录音线程，并存入test.wav文件里
     AudioRecorder audioRecorder;
     //-------------------音频部分-----------------------
-    public void onVoiceBtnPressed(MouseEvent mouseEvent) {
+    @FXML
+    public void onVoiceBtnPressed(MouseEvent mouseEvent) throws InterruptedException {
         audioRecorder = new AudioRecorder("test.wav");
         audioRecorder.start();
+//        Thread.sleep(5000);
+//        audioRecorder.stopRecording();
     }
 
+    @FXML
     public void onVoiceBtnReleased(MouseEvent mouseEvent) throws IOException {
         audioRecorder.stopRecording();
         //audioRecorder.play("test.wav");//根据文件路径播放音频
