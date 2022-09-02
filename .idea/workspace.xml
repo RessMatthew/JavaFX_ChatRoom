@@ -10,9 +10,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="修复小bug">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_4_5_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_kms_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_ram_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_oss_aliyun_sdk_oss_3_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opentracing_opentracing_api_0_33_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opentracing_opentracing_noop_0_33_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opentracing_opentracing_util_0_33_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ini4j_ini4j_0_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacoco_org_jacoco_agent_runtime_0_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom2_2_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeChat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WeChat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/Login/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/Login/LoginViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao/createdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao/createdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/MainViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainViewStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/host.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/man.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/offline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/offline.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/online.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/online.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/timg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/usergroup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wechat.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wechat.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +151,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -224,7 +260,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -315,31 +353,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Coding/javafx/javaFX&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e5b152ed6b4609e94678665e9a972cbc&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Coding/javafx/javaFX__/src/main/resources/image",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.general",
+    "spring.configuration.checksum": "e5b152ed6b4609e94678665e9a972cbc"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Coding\javafx\javaFX__\src\main\resources\image" />
       <recent name="E:\Coding\javafx\javaFX\src\main\resources\image" />
       <recent name="E:\Coding\javafx\javaFX\src\main\resources" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="F:\WeChat\src\com\image" />
-      <recent name="F:\WeChat\src\com\dyleaf\Client\stage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao" />
@@ -492,7 +531,10 @@
       <workItem from="1662026576778" duration="714000" />
       <workItem from="1662044424553" duration="1437000" />
       <workItem from="1662045908654" duration="173000" />
-      <workItem from="1662079510603" duration="2845000" />
+      <workItem from="1662079510603" duration="11490000" />
+      <workItem from="1662102954487" duration="1746000" />
+      <workItem from="1662106287607" duration="5486000" />
+      <workItem from="1662115080587" duration="7625000" />
     </task>
     <task id="LOCAL-00001" summary="新增文件传输&#10;新增些许注释">
       <created>1662031929969</created>
