@@ -98,6 +98,12 @@
             <artifactId>commons-codec</artifactId>
             <version>1.15</version>
         </dependency>
+        <!-- 阿里云oss依赖 -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.13.0</version>
+        </dependency>
 
         <!-- 百度语音识别 -->
         <dependency>
@@ -111,6 +117,11 @@
             <groupId>org</groupId>
             <artifactId>jaudiotagger</artifactId>
             <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
         </dependency>
 
     </dependencies>

@@ -46,14 +46,7 @@
    <top>
       <HBox prefHeight="50.0" prefWidth="200.0" spacing="4.0" style="-fx-background-color: #a0b9cf;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/head.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="10.0" top="5.0" />
-               </HBox.margin>
-            </ImageView>
+            <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#onProfileBtnClicked" prefHeight="50.0" prefWidth="56.0" />
             <Label fx:id="labChatTip" alignment="CENTER" prefHeight="50.0" prefWidth="586.0" text="Group Chat" textFill="WHITE">
                <padding>
                   <Insets top="10.0" />

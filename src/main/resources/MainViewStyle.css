@@ -25,6 +25,11 @@
     -fx-opacity: 0.2;
 }
 
+#btnProfile{
+    /*-fx-graphic: url("https://javafx-demo.oss-cn-hangzhou.aliyuncs.com/profile/boy1.png");*/
+    -fx-background-color: transparent;
+}
+
 .list-cell:selected{
     -fx-background-color: #a0b9cf;
 }

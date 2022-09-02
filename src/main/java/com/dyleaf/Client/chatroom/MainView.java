@@ -6,11 +6,11 @@ import com.dyleaf.Client.emojis.EmojiDisplayer;
 import com.dyleaf.Client.model.ClientModel;
 import com.dyleaf.Client.stage.ControlledStage;
 import com.dyleaf.Client.stage.StageController;
-import com.dyleaf.Utils.AudioBase64Util;
-import com.dyleaf.Utils.AudioRecognition;
-import com.dyleaf.Utils.AudioRecorder;
+import com.dyleaf.Dao.DbUtils;
 import com.dyleaf.bean.ClientUser;
 import com.dyleaf.bean.Message;
+import com.dyleaf.bean.OssPutObject;
+import com.dyleaf.bean.ServerUser;
 import com.google.gson.Gson;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -33,7 +33,12 @@ import javafx.util.Callback;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -43,6 +48,8 @@ import static com.dyleaf.Utils.BinUtil.*;
 
 public class MainView implements ControlledStage, Initializable {
 
+    @FXML
+    public Button btnProfile;
     @FXML
     public Button btnEmoji;
     @FXML
@@ -107,7 +114,8 @@ public class MainView implements ControlledStage, Initializable {
         userGroup.setItems(uselist);
         chatWindow.setItems(chatReccder);
         thisUser = model.getThisUser();
-//        labUserName.setText("Welcome " + model.getThisUser() + "!");
+
+        loadProfileImage(thisUser);
 
         //发送按钮的逻辑处理函数
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
@@ -202,6 +210,29 @@ public class MainView implements ControlledStage, Initializable {
     }
 
 
+    //加载头像
+    private void loadProfileImage(String username){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet result = null;
+        String sql="select image from ChatUser where name=?";
+        String profile=null;//用户头像
+        try{
+            conn = DbUtils.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(   1, username);
+            result = ps.executeQuery();
+            if (result.next())
+                profile=result.getString("image");
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            DbUtils.close(result, ps, conn);
+        }
+        String styleSheet="-fx-graphic:url("+profile+")";
+        btnProfile.setStyle(styleSheet);
+    }
+
     //点击表情按钮打开新的窗口
     @FXML
     public void onEmojiBtnClcked() {
@@ -235,6 +266,58 @@ public class MainView implements ControlledStage, Initializable {
             model.sentMessage(gson.toJson(map));
         }
 
+    }
+
+    //头像选择按钮
+    @FXML
+    public void onProfileBtnClicked() throws IOException {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Change profile");
+        File file = fileChooser.showOpenDialog(stage);
+
+        String url=file.toString();
+        String fileName=file.getName();
+        System.out.println(url);
+        System.out.println(fileName);
+
+        String resultUrl= OssPutObject.putObject(url,fileName);//上传图片
+        System.out.println(resultUrl);
+
+        //将图片URL路径存到数据库
+        Connection connection=null;
+        PreparedStatement preparedStatement=null;
+        String sql="update ChatUser set image=? where name=?";
+        try {
+            connection = DbUtils.getConnection();
+            System.out.println("get connect");
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,resultUrl);
+            preparedStatement.setString(2,thisUser);
+            System.out.println(thisUser+","+resultUrl);
+            preparedStatement.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("头像修改失败");
+        }finally {
+            DbUtils.close(null,preparedStatement,connection);
+        }
+
+        //设置头像
+        String styleSheet="-fx-graphic:url("+resultUrl+")";
+        btnProfile.setStyle(styleSheet);
+
+        //更新列表中的头像
+        for (ClientUser item:uselist){
+            if (thisUser.equals(item.getUserName())){
+                userGroup.setCellFactory(new Callback<ListView, ListCell>() {
+                    @Override
+                    public ListCell call(ListView param) {
+                        return new UserCell();
+                    }
+                });
+            }
+        }
 
     }
 
@@ -302,7 +385,7 @@ public class MainView implements ControlledStage, Initializable {
     //-------------------渲染部分-----------------------
 
     //左边的一个个单个的联系人
-    public static class UserCell extends ListCell<ClientUser> {
+    public class UserCell extends ListCell<ClientUser> {
         @Override
         protected void updateItem(ClientUser item, boolean empty) {
             super.updateItem(item, empty);
@@ -310,10 +393,31 @@ public class MainView implements ControlledStage, Initializable {
                 @Override
                 public void run() {
                     if (item != null) {
+                        //加载列表用户头像
+                        Connection conn = null;
+                        PreparedStatement ps = null;
+                        ResultSet result = null;
+                        String sql="select image from ChatUser where name=?";
+                        String profile=null;//用户头像
+                        try{
+                            conn = DbUtils.getConnection();
+                            ps = conn.prepareStatement(sql);
+                            ps.setString(   1, item.getUserName());
+                            result = ps.executeQuery();
+                            if (result.next())
+                                profile=result.getString("image");
+                        }catch(SQLException e){
+                            e.printStackTrace();
+                        }finally{
+                            DbUtils.close(result, ps, conn);
+                        }
+                        if (profile==null)
+                            profile="image/group.png";
                         HBox hbox = new HBox();
-                        ImageView imageHead = new ImageView(new Image("image/head.png"));
+                        ImageView imageHead = new ImageView(new Image(profile));
                         imageHead.setFitHeight(20);
                         imageHead.setFitWidth(20);
+
                         ClientUser user = (ClientUser) item;
                         ImageView imageStatus;
                         if(user.getUserName().equals("[group]")){
@@ -373,7 +477,28 @@ public class MainView implements ControlledStage, Initializable {
                         //聊天内容上方标签字体颜色和背景颜色
                         labUser.setStyle("-fx-background-color: #7bc5cd; -fx-text-fill: white;");
                         //用户头像
-                        ImageView image = new ImageView(new Image("image/head.png"));
+//                        ImageView image = new ImageView(new Image("image/head.png"));
+//                        image.setFitHeight(20);
+//                        image.setFitWidth(20);
+                        //用户头像
+                        Connection conn = null;
+                        PreparedStatement ps = null;
+                        ResultSet result = null;
+                        String sql="select image from ChatUser where name=?";
+                        String profile=null;//用户头像
+                        try{
+                            conn = DbUtils.getConnection();
+                            ps = conn.prepareStatement(sql);
+                            ps.setString(   1, item.getSpeaker());
+                            result = ps.executeQuery();
+                            if (result.next())
+                                profile=result.getString("image");
+                        }catch(SQLException e){
+                            e.printStackTrace();
+                        }finally{
+                            DbUtils.close(result, ps, conn);
+                        }
+                        ImageView image = new ImageView(new Image(profile));
                         image.setFitHeight(20);
                         image.setFitWidth(20);
                         hbox.getChildren().addAll(image, labUser);
