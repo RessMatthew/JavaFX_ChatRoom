@@ -18,11 +18,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="792.0" style="-fx-background-color: #c6e1df;" stylesheets="@MainViewStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dyleaf.Client.chatroom.MainView">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="792.0" style="-fx-background-color: #e8f0f8;" stylesheets="@MainViewStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dyleaf.Client.chatroom.MainView">
    <left>
       <VBox prefHeight="300.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="32.0" prefWidth="146.0" style="-fx-background-color: #2e7889;">
+            <HBox prefHeight="32.0" prefWidth="146.0" style="-fx-background-color: #7d90a1;">
                <children>
                   <Label fx:id="labUserCoumter" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="187.0" text="服务器在线人数：" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -44,7 +44,7 @@
       </VBox>
    </left>
    <top>
-      <HBox prefHeight="50.0" prefWidth="200.0" spacing="4.0" style="-fx-background-color: #8dc5cc;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="50.0" prefWidth="200.0" spacing="4.0" style="-fx-background-color: #a0b9cf;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>

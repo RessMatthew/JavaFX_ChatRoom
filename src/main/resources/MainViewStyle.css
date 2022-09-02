@@ -25,3 +25,11 @@
     -fx-opacity: 0.2;
 }
 
+.list-cell:selected{
+    -fx-background-color: #a0b9cf;
+}
+.list-cell{
+    -fx-background-color: #f0f5fa;
+    -fx-font-size: 16;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
