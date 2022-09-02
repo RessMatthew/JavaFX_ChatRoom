@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- *@Author com.dyleaf [com.dyleaf.github.io]
- *@ceeate 2017/11/30
  * @description
  */
 public class Message implements Serializable{

@@ -4,8 +4,6 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- *@Author com.dyleaf [com.dyleaf.github.io]
- *@ceeate 2017/11/30
  * @description  the user model in server
  */
 public class ServerUser {

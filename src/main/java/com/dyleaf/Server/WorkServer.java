@@ -18,8 +18,6 @@ import java.util.*;
 import static com.dyleaf.Utils.Constants.*;
 
 /**
- * @Author com.dyleaf [com.dyleaf.github.io]
- * @ceeate 2017/11/30
  * @description the worker server, deal with the thing of its user
  */
 public class WorkServer extends Thread {

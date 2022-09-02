@@ -3,8 +3,6 @@ package com.dyleaf.bean;
 import java.io.Serializable;
 
 /**
- *@Author com.dyleaf [com.dyleaf.github.io]
- *@ceeate 2017/11/30
  * @description  the user model in com.dyleaf.Client
  */
 public class ClientUser implements Serializable{

@@ -258,7 +258,7 @@ public class MainView implements ControlledStage, Initializable {
 
     public void onVoiceBtnReleased(MouseEvent mouseEvent) throws IOException {
         audioRecorder.stopRecording();
-        audioRecorder.play("test.wav");//根据文件路径播放音频
+        //audioRecorder.play("test.wav");//根据文件路径播放音频
         //转码发送
         try{
             String voiceContent = AudioBase64Util.wavToStr("test.wav");
@@ -271,7 +271,8 @@ public class MainView implements ControlledStage, Initializable {
                 map.put(RECEIVER, seletUser);
                 map.put(SPEAKER, model.getThisUser());
             }
-            map.put(CONTENT, audioRecorder.getName());
+            String recognise = AudioRecognition.recognise();
+            map.put(CONTENT, recognise);
             map.put(MESSAGETYPE,VOICETYPE);
             map.put(VOICECONTENT,voiceContent);
             model.sentMessage(gson.toJson(map));
@@ -359,8 +360,9 @@ public class MainView implements ControlledStage, Initializable {
                             /**
                              * TODO 渲染音频
                              **/
-                            String recognise = AudioRecognition.recognise();
-                            txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[音频]： "+recognise));
+                            //String recognise = AudioRecognition.recognise();
+                            txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[音频]： "+item.getContent()));
+                            //txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[音频]： "+recognise));
                         }
                         else {
                             //如果不是文件类型，则正常渲染。
