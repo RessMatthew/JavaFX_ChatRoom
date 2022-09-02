@@ -93,6 +93,7 @@
                               <Insets />
                            </HBox.margin>
                         </Button>
+                        <Button fx:id="btnVoice" mnemonicParsing="false" onMousePressed="#onVoiceBtnPressed" onMouseReleased="#onVoiceBtnReleased" prefHeight="27.0" prefWidth="49.0" text="v" />
                         <Button fx:id="btnSend" mnemonicParsing="false" prefHeight="36.0" prefWidth="132.0" style="-fx-background-color: #0d91b5;" text="发送" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="17.0" />

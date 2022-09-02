@@ -203,6 +203,14 @@ public class ClientModel {
                 m.setTimer((String) gsonMap.get(TIME));
                 m.setSpeaker((String) gsonMap.get(SPEAKER));
                 m.setContent((String) gsonMap.get(CONTENT));
+
+                //file
+                m.setType((String) gsonMap.get(MESSAGETYPE));
+                m.setFileContent((String)gsonMap.get(FILECONTENT));
+
+                //音频
+                m.setVoiceContent((String)gsonMap.get(VOICECONTENT));
+
                 if (chatUser.equals("[group]")) {
                     chatRecoder.add(m);
                 }
@@ -215,6 +223,10 @@ public class ClientModel {
                 String content = (String) gsonMap.get(CONTENT);
                 String type = (String) gsonMap.get(MESSAGETYPE);
                 String fileContent = (String)gsonMap.get(FILECONTENT);
+
+                //音频
+                String voiceContent = (String)gsonMap.get(VOICECONTENT);
+
                 m = new Message();
                 m.setSpeaker(speaker);
                 m.setContent(content);
@@ -222,6 +234,10 @@ public class ClientModel {
                 //file
                 m.setType(type);
                 m.setFileContent(fileContent);
+
+                //音频
+                m.setVoiceContent(voiceContent);
+
                 if (thisUser.equals(receiver)) {
                     if (!chatUser.equals(speaker)) {
                         for (int i = 0; i < userList.size(); i++) {

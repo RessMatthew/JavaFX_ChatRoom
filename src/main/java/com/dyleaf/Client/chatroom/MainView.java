@@ -6,6 +6,9 @@ import com.dyleaf.Client.emojis.EmojiDisplayer;
 import com.dyleaf.Client.model.ClientModel;
 import com.dyleaf.Client.stage.ControlledStage;
 import com.dyleaf.Client.stage.StageController;
+import com.dyleaf.Test.AudioRecorder;
+import com.dyleaf.Utils.AudioBase64Util;
+import com.dyleaf.Utils.AudioRecognition;
 import com.dyleaf.bean.ClientUser;
 import com.dyleaf.bean.Message;
 import com.google.gson.Gson;
@@ -19,7 +22,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
@@ -29,6 +32,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -169,8 +173,12 @@ public class MainView implements ControlledStage, Initializable {
 //                        System.out.println("Path"+file.getPath());
 //                        System.out.println("Parent"+file.getParent());
                     }
-
-
+                }else if( (message.getType()!=null) && (message.getType().equals(VOICETYPE))){
+                    System.out.println("-------音频消息-------");
+                    AudioBase64Util.strToWar(message.getVoiceContent());
+                    //测试播放
+                    AudioRecorder audioRecorder = new AudioRecorder("test.wav");
+                    audioRecorder.play("test.wav");
                 }
             }
         });
@@ -240,6 +248,54 @@ public class MainView implements ControlledStage, Initializable {
         return labUserCoumter;
     }
 
+    //新建录音线程，并存入test.wav文件里
+    AudioRecorder audioRecorder;
+    //-------------------音频部分-----------------------
+    public void onVoiceBtnPressed(MouseEvent mouseEvent) {
+        audioRecorder = new AudioRecorder("test.wav");
+        audioRecorder.start();
+    }
+
+    public void onVoiceBtnReleased(MouseEvent mouseEvent) throws IOException {
+        audioRecorder.stopRecording();
+        audioRecorder.play("test.wav");//根据文件路径播放音频
+        //转码发送
+        try{
+            String voiceContent = AudioBase64Util.wavToStr("test.wav");
+            HashMap map = new HashMap();
+            if (pattern == GROUP) {
+                map.put(COMMAND, COM_CHATALL);
+                map.put(SPEAKER, model.getThisUser());
+            } else if (pattern == SINGLE) {
+                map.put(COMMAND, COM_CHATWITH);
+                map.put(RECEIVER, seletUser);
+                map.put(SPEAKER, model.getThisUser());
+            }
+            map.put(CONTENT, audioRecorder.getName());
+            map.put(MESSAGETYPE,VOICETYPE);
+            map.put(VOICECONTENT,voiceContent);
+            model.sentMessage(gson.toJson(map));
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        /*
+        HashMap map = new HashMap();
+        if (pattern == GROUP) {
+            map.put(COMMAND, COM_CHATALL);
+            map.put(SPEAKER, model.getThisUser());
+        } else if (pattern == SINGLE) {
+            map.put(COMMAND, COM_CHATWITH);
+            map.put(RECEIVER, seletUser);
+            map.put(SPEAKER, model.getThisUser());
+        }
+        map.put(CONTENT, file.getName());
+        map.put(MESSAGETYPE,FILETYPE);
+        map.put(FILECONTENT,fileContent);
+        model.sentMessage(gson.toJson(map));
+        */
+
+    }
 
 
     //-------------------渲染部分-----------------------
@@ -299,7 +355,14 @@ public class MainView implements ControlledStage, Initializable {
                         TextFlow txtContent = null;
                         if( (item.getType()!=null)&&(item.getType().equals(FILETYPE) ) ){
                             txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[文件]： "+item.getContent()));
-                        }else {
+                        }else if((item.getType()!=null)&&(item.getType().equals(VOICETYPE))){
+                            /**
+                             * TODO 渲染音频
+                             **/
+                            String recognise = AudioRecognition.recognise();
+                            txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[音频]： "+recognise));
+                        }
+                        else {
                             //如果不是文件类型，则正常渲染。
                             txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode(item.getContent()));
                         }

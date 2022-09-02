@@ -21,6 +21,9 @@ public class Message implements Serializable{
 
     private String fileContent = null;
 
+    //---------------音频传输部分-----------------------
+    private String voiceContent = null;
+
     //------------------------------------------------
 
     public ArrayList<String> getImageList() {
@@ -76,5 +79,15 @@ public class Message implements Serializable{
 
     //------------------------------------------------
 
+    //---------------音频传输部分-----------------------
+
+    public String getVoiceContent() {
+        return voiceContent;
+    }
+
+    public void setVoiceContent(String voiceContent) {
+        this.voiceContent = voiceContent;
+    }
+    //------------------------------------------------
 
 }
