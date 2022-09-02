@@ -10,58 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="修复小bug">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ChatRoomServer_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Client_1_12_249_224_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emoji.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LocalServer_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/WeChat_jar.xml" beforeDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_4_5_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_kms_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_ram_3_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_oss_aliyun_sdk_oss_3_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opentracing_opentracing_api_0_33_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opentracing_opentracing_noop_0_33_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opentracing_opentracing_util_0_33_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ini4j_ini4j_0_5_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jacoco_org_jacoco_agent_runtime_0_8_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jdom_jdom2_2_0_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/OssPutObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_simple_1_7_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_2__16_18__Default_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_2__16_18__Default_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao/DBTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao/createdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Server/WorkServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Server/WorkServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/ClientUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/ClientUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/ServerUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/bean/ServerUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/emoji/emoji.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/emoji/emoji.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.wav" beforeDir="false" afterPath="$PROJECT_DIR$/test.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeChat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WeChat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/Login/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/Login/LoginViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao/createdb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Dao/createdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainViewStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/host.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/man.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/offline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/offline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/online.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/image/online.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/timg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/image/usergroup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wechat.properties" beforeDir="false" afterPath="$PROJECT_DIR$/wechat.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +229,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
