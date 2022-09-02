@@ -33,3 +33,13 @@
     -fx-font-size: 16;
     -fx-font-family: "Arial Rounded MT Bold";
 }
+
+#btnVoice{
+    -fx-graphic: url("image/talk.png");
+}
+#btnVoice:hover {
+    -fx-opacity: 0.5;
+}
+#btnVoice:pressed {
+    -fx-opacity: 0.2;
+}

@@ -1,7 +1,7 @@
 package com.dyleaf.Utils;
 
 import com.baidu.aip.speech.AipSpeech;
-import com.dyleaf.Test.AudioRecorder;
+import com.dyleaf.Utils.AudioRecorder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -36,7 +36,7 @@ public class AudioRecognition {
 
     public static void main(String[] args) {
         //测试播放
-        com.dyleaf.Test.AudioRecorder audioRecorder = new AudioRecorder("test.wav");
+        com.dyleaf.Utils.AudioRecorder audioRecorder = new AudioRecorder("test.wav");
         audioRecorder.play("temp.wav");
 
         //测试识别
