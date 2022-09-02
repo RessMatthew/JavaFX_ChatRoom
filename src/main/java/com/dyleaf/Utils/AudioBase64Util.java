@@ -3,6 +3,8 @@ package com.dyleaf.Utils;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -39,6 +41,19 @@ public class AudioBase64Util {
         }
         catch (Exception e)
         {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * TODO 播放wav文件
+     */
+    public static void playWavByApplet(){
+        File file = new File("test.wav");
+        try {
+            AudioClip audioClip = Applet.newAudioClip(file.toURI().toURL());
+            audioClip.play();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

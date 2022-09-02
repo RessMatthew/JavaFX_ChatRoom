@@ -183,8 +183,9 @@ public class MainView implements ControlledStage, Initializable {
 //                    } catch (InterruptedException e) {
 //                        e.printStackTrace();
 //                    }
-                    AudioRecorder audioRecorder = new AudioRecorder("test.wav");
-                    audioRecorder.play("test.wav");
+                    AudioBase64Util.playWavByApplet();
+//                    AudioRecorder audioRecorder = new AudioRecorder("test.wav");
+//                    audioRecorder.play("test.wav");
                 }
             }
         });
