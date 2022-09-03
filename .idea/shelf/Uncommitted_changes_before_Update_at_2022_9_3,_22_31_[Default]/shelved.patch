@@ -1,0 +1,119 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dc35a8f65f15473b7729354587c4c0812ef597d7)
++++ b/.idea/workspace.xml	(date 1662215403302)
+@@ -2,8 +2,7 @@
+ <project version="4">
+   <component name="ArtifactsWorkspaceSettings">
+     <artifacts-to-build>
+-      <artifact name="Client_1.12.249.224:jar" />
+-      <artifact name="Clinet_101.34.37.235:jar" />
++      <artifact name="WeChat" />
+     </artifacts-to-build>
+   </component>
+   <component name="AutoImportSettings">
+@@ -11,15 +10,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="修复小bug">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Utils/PhotoBase64Util.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/artifacts/WeChat.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/emojis/EmojiDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/emojis/EmojiDisplayer.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Utils/Constants.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MainView.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/test.wav" beforeDir="false" afterPath="$PROJECT_DIR$/test.wav" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -323,7 +315,13 @@
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="nodejs_package_manager_path" value="npm" />
++    <property name="project.structure.last.edited" value="Artifacts" />
++    <property name="project.structure.proportion" value="0.15" />
++    <property name="project.structure.side.proportion" value="0.2" />
++    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+@@ -541,7 +539,9 @@
+       <workItem from="1662104683192" duration="1760000" />
+       <workItem from="1662104763816" duration="1229000" />
+       <workItem from="1662171997590" duration="132000" />
+-      <workItem from="1662189700022" duration="4990000" />
++      <workItem from="1662189700022" duration="5212000" />
++      <workItem from="1662207445134" duration="1881000" />
++      <workItem from="1662213230660" duration="1454000" />
+     </task>
+     <task id="LOCAL-00001" summary="新增文件传输&#10;新增些许注释">
+       <created>1662031929969</created>
+Index: .idea/artifacts/WeChat.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/artifacts/WeChat.xml b/.idea/artifacts/WeChat.xml
+new file mode 100644
+--- /dev/null	(date 1662208780083)
++++ b/.idea/artifacts/WeChat.xml	(date 1662208780083)
+@@ -0,0 +1,48 @@
++<component name="ArtifactManager">
++  <artifact type="javafx" name="WeChat">
++    <output-path>$PROJECT_DIR$/out/artifacts/WeChat</output-path>
++    <root id="root">
++      <element id="archive" name="WeChat.jar">
++        <element id="module-output" name="WeChat" />
++      </element>
++      <element id="artifact" artifact-name="Client_1.12.249.224:jar" />
++      <element id="library" level="project" name="Maven: com.aliyun.oss:aliyun-sdk-oss:3.13.0" />
++      <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:4.5.10" />
++      <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-kms:2.11.0" />
++      <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-ram:3.1.0" />
++      <element id="library" level="project" name="Maven: com.baidu.aip:java-sdk:4.16.11" />
++      <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:1.3.9" />
++      <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
++      <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.0.18" />
++      <element id="library" level="project" name="Maven: com.google.guava:guava:23.0" />
++      <element id="library" level="project" name="Maven: com.google.j2objc:j2objc-annotations:1.1" />
++      <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.15" />
++      <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
++      <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
++      <element id="library" level="project" name="Maven: io.opentracing:opentracing-api:0.33.0" />
++      <element id="library" level="project" name="Maven: io.opentracing:opentracing-noop:0.33.0" />
++      <element id="library" level="project" name="Maven: io.opentracing:opentracing-util:0.33.0" />
++      <element id="library" level="project" name="Maven: javax.activation:javax.activation-api:1.2.0" />
++      <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
++      <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.8-dmr" />
++      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.4.1" />
++      <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" />
++      <element id="library" level="project" name="Maven: org.codehaus.jettison:jettison:1.1" />
++      <element id="library" level="project" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" />
++      <element id="library" level="project" name="Maven: org.ini4j:ini4j:0.5.4" />
++      <element id="library" level="project" name="Maven: org.jacoco:org.jacoco.agent:runtime:0.8.5" />
++      <element id="library" level="project" name="Maven: org.jdom:jdom2:2.0.6" />
++      <element id="library" level="project" name="Maven: org.json:json:20160810" />
++      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
++      <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.25" />
++      <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.22" />
++      <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.3.22" />
++      <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.22" />
++      <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.22" />
++      <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.22" />
++      <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.22" />
++      <element id="library" level="project" name="Maven: org:jaudiotagger:2.0.3" />
++      <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file

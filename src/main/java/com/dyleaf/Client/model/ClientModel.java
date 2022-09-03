@@ -305,8 +305,8 @@ public class ClientModel {
      */
     public boolean CheckLogin(String username, String password, StringBuffer buf, int type) {
         //this.IP = IP; //bind server IP
-        this.IP="1.12.249.224";
-//        this.IP="101.34.37.235";
+//        this.IP="1.12.249.224";
+        this.IP="101.34.37.235";
         Map<Integer, Object> map;
         try {
             //针对多次尝试登录
@@ -316,10 +316,11 @@ public class ClientModel {
                 writer = new PrintWriter(client.getOutputStream(), true);
             }
             map = new HashMap<>();
-            if (type == 0)
+            if (type == 0) {
                 map.put(COMMAND, COM_LOGIN);
-            else
+            } else {
                 map.put(COMMAND, COM_SIGNUP);
+            }
             map.put(USERNAME, username);
             map.put(PASSWORD, password);
             writer.println(gson.toJson(map));

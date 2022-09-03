@@ -80,6 +80,8 @@ public class WorkServer extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
             logOut();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 
@@ -89,7 +91,7 @@ public class WorkServer extends Thread {
      *
      * @param readLine
      */
-    private void handleMessage(String readLine) {
+    private void handleMessage(String readLine) throws SQLException {
         System.out.println("handle message" + readLine);
         Map<Integer, Object> gsonMap = GsonUtils.GsonToMap(readLine);
         Integer command = GsonUtils.Double2Integer((Double) gsonMap.get(COMMAND));
@@ -123,6 +125,10 @@ public class WorkServer extends Thread {
             case COM_LOGIN:
                 username = (String) gsonMap.get(USERNAME);
                 password = (String) gsonMap.get(PASSWORD);
+
+
+
+
                 boolean find = false;
                 for (ServerUser u : users) {
                     if (u.getUserName().equals(username)) {
@@ -146,6 +152,24 @@ public class WorkServer extends Thread {
                         break;
                     }
                 }
+
+                //再从数据库找一次
+                List<ServerUser> newUserServer = UserDaoImpl.getInstance().findAll();
+                for (ServerUser u : newUserServer) {
+                    if (u.getUserName().equals(username)){
+                        currentTime = new Date().getTime();
+                        map.put(COM_RESULT, SUCCESS);
+                        map.put(COM_DESCRIPTION, username + "success");
+                        u.setStatus("online");
+                        writer.println(gson.toJson(map));
+                        workUser = u;
+                        broadcast(getGroup(), COM_SIGNUP);
+                        find = true;
+                        System.out.println("用户" + username + "上线了");
+                        break;
+                    }
+                }
+
                 if (!find) {
                     map.put(COM_RESULT, FAILED);
                     if (!map.containsKey(COM_DESCRIPTION)) {
