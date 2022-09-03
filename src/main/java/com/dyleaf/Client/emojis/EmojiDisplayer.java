@@ -71,7 +71,7 @@ public class EmojiDisplayer {
 	 *            图片显示大小
 	 * @param pad
 	 *            图片间距
-	 * @param isCursor
+//	 * @param isCursor
 	 *            是否需要图片光标及鼠标处理事件
 	 * @return
 	 */
