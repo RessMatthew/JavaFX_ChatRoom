@@ -120,13 +120,6 @@ public class RegViewController implements ControlledStage {
 
     }
 
-    public void showError(String error) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Wechat");
-        alert.setContentText("登录失败 " + error);
-        alert.show();
-    }
-
     //发送邮箱验证码
     @FXML
     public void sendAuthCodeEmail() {
