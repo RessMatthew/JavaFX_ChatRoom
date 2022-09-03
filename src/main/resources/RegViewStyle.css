@@ -1,0 +1,23 @@
+#btn_profile{
+    -fx-graphic: url("image/add.png");
+    -fx-background-color:white;
+    -fx-background-size: 100;
+    -fx-max-height: 100;
+    -fx-min-height: 100;
+    -fx-max-width: 100;
+    -fx-min-width: 100;
+}
+
+#btn_send:hover {
+    -fx-opacity: 0.5;
+}
+#btn_send:pressed {
+    -fx-opacity: 0.2;
+}
+
+#btn_reg:hover {
+    -fx-opacity: 0.5;
+}
+#btn_reg:pressed {
+    -fx-opacity: 0.2;
+}

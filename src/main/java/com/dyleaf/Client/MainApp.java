@@ -12,6 +12,9 @@ public class MainApp extends Application {
     public static String loginViewID = "LoginView";
     public static String loginViewRes = "/LoginView.fxml";
 
+    public static String regViewID="RegView";
+    public static String regViewRes="/RegView.fxml";
+
     public static String EmojiSelectorID = "EmojiSelectorUI";
     public static String EmojiSelectorRes = "/EmojiSelectorUI.fxml";
 

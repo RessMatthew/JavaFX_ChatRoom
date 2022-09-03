@@ -4,6 +4,8 @@ import com.dyleaf.Client.model.ClientModel;
 import com.dyleaf.Client.stage.ControlledStage;
 import com.dyleaf.Client.MainApp;
 import com.dyleaf.Client.stage.StageController;
+import com.dyleaf.Dao.DbUtils;
+import com.dyleaf.bean.ServerUser;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,6 +21,10 @@ import javafx.stage.WindowEvent;
 
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginViewController implements ControlledStage, Initializable {
@@ -49,6 +55,7 @@ public class LoginViewController implements ControlledStage, Initializable {
 
     }
 
+    //跳转到主界面
     public void goToMain() {
         myController.loadStage(MainApp.mainViewID,MainApp.mainViewRes);
         myController.setStage(MainApp.mainViewID,MainApp.loginViewID);
@@ -59,6 +66,12 @@ public class LoginViewController implements ControlledStage, Initializable {
                 myController.unloadStage(MainApp.EmojiSelectorID);
             }
         });
+    }
+
+    //跳转到注册界面
+    public void goToReg(){
+        myController.loadStage(MainApp.regViewID,MainApp.regViewRes);
+        myController.setStage(MainApp.regViewID,MainApp.loginViewID);
     }
 
     public void logIn() {
@@ -95,13 +108,13 @@ public class LoginViewController implements ControlledStage, Initializable {
         alert.show();
     }
 
-    public void signUp(ActionEvent actionEvent) {
-        StringBuffer result = new StringBuffer();
-        if (model.CheckLogin(txtUsername.getText(), textPassword.getText(), result, 1)) {
-            goToMain();
-        } else {
-            showError(result.toString());
-        }
-    }
+//    public void signUp(ActionEvent actionEvent) {
+//        StringBuffer result = new StringBuffer();
+//        if (model.CheckLogin(txtUsername.getText(), textPassword.getText(), result, 1)) {
+//            goToMain();
+//        } else {
+//            showError(result.toString());
+//        }
+//    }
 
 }

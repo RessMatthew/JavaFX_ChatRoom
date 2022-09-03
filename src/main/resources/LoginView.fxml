@@ -83,7 +83,7 @@
             </Button>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btn_signIn" mnemonicParsing="false" onAction="#signUp" prefHeight="34.0" prefWidth="75.0" style="-fx-background-color: transparent;" text="注册" textFill="#7d91a2">
+                  <Button fx:id="btn_signIn" mnemonicParsing="false" onAction="#goToReg" prefHeight="34.0" prefWidth="75.0" style="-fx-background-color: transparent;" text="注册" textFill="#7d91a2">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>

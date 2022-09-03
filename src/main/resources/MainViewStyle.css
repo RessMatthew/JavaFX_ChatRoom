@@ -48,3 +48,14 @@
 #btnVoice:pressed {
     -fx-opacity: 0.2;
 }
+
+#btnPhoto{
+    -fx-graphic: url("image/photo.png");
+    -fx-background-color: transparent;
+}
+#btnPhoto:hover {
+    -fx-opacity: 0.5;
+}
+#btnPhoto:pressed {
+    -fx-opacity: 0.2;
+}
