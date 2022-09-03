@@ -1,7 +1,6 @@
 package com.dyleaf.Client.emojis;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -19,6 +18,8 @@ import com.dyleaf.Client.emojis.Emoji;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 
 /**
  * Emoji管理器:
@@ -65,14 +66,23 @@ public class EmojiHandler {
 
 		JsonReader reader;
 		try {
-			// 获取resource中的json
+			// 不使用getResource或getFile方法获取resource中的json
+			Resource resource = new ClassPathResource(path);
+			InputStream inputStream = resource.getInputStream();
+			reader = new JsonReader(new InputStreamReader(inputStream));
+
+			/* getResource或getFile方法,在压缩成jar包后无法，访问路径，需使用上面文件流的方式
 			URL url =  this.getClass().getClassLoader().getResource(path);
 			reader = new JsonReader(new FileReader(url.getFile()));
+			*/
+
 			emojiMap = gson.fromJson(reader, new TypeToken<Map<String, Emoji>>() {
 			}.getType());
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
