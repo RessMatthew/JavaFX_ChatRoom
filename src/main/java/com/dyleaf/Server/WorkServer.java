@@ -153,20 +153,26 @@ public class WorkServer extends Thread {
                     }
                 }
 
-                //再从数据库找一次
+                //新注册用户，要登入，再从数据库找一次
                 List<ServerUser> newUserServer = UserDaoImpl.getInstance().findAll();
-                for (ServerUser u : newUserServer) {
-                    if (u.getUserName().equals(username)){
-                        currentTime = new Date().getTime();
-                        map.put(COM_RESULT, SUCCESS);
-                        map.put(COM_DESCRIPTION, username + "success");
-                        u.setStatus("online");
-                        writer.println(gson.toJson(map));
-                        workUser = u;
-                        broadcast(getGroup(), COM_SIGNUP);
-                        find = true;
-                        System.out.println("用户" + username + "上线了");
-                        break;
+                if (!find) {
+                    for (ServerUser u : newUserServer) {
+                        if (u.getUserName().equals(username)) {
+                            currentTime = new Date().getTime();
+                            map.put(COM_RESULT, SUCCESS);
+                            map.put(COM_DESCRIPTION, username + "success");
+                            u.setStatus("online");
+                            writer.println(gson.toJson(map));
+                            workUser = u;
+
+                            find = true;
+                            System.out.println("用户" + username + "上线了");
+
+                            //将新用户加入UserServer array
+                            users.add(u);
+                            broadcast(getGroup(), COM_SIGNUP);
+                            break;
+                        }
                     }
                 }
 

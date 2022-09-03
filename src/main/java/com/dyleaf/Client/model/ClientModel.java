@@ -306,7 +306,7 @@ public class ClientModel {
     public boolean CheckLogin(String username, String password, StringBuffer buf, int type) {
         //this.IP = IP; //bind server IP
 //        this.IP="1.12.249.224";
-        this.IP="101.34.37.235";
+//        this.IP="101.34.37.235";
         Map<Integer, Object> map;
         try {
             //针对多次尝试登录
@@ -325,7 +325,7 @@ public class ClientModel {
             map.put(PASSWORD, password);
             writer.println(gson.toJson(map));
             String strLine = reader.readLine(); //readline是线程阻塞的
-            System.out.println(strLine);
+            System.out.println("...登入请求返回...str"+strLine);
             map = GsonUtils.GsonToMap(strLine);
             Integer result = GsonUtils.Double2Integer((Double) map.get(COM_RESULT));
             if (result == SUCCESS) {
