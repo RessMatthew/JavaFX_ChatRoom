@@ -52,7 +52,7 @@ public class RegViewController implements ControlledStage {
 
     //跳转到登录界面
     public void goTologin() {
-        myController.loadStage(MainApp.loginViewID,MainApp.loginViewRes);
+        myController.loadStage(MainApp.loginViewID,MainApp.loginViewRes, StageStyle.UNDECORATED);
         myController.setStage(MainApp.loginViewID,MainApp.regViewID);
     }
 
