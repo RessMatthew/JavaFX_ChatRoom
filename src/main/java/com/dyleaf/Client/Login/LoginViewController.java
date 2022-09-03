@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -23,13 +24,11 @@ import java.util.ResourceBundle;
 public class LoginViewController implements ControlledStage, Initializable {
 
     @FXML
-    TextField textPassword;
+    PasswordField textPassword;
     @FXML
     TextField txtUsername;
     @FXML
     Button btn_login;
-    @FXML
-    ImageView imageView;
     @FXML
     Button btn_signIn;
 
