@@ -33,16 +33,16 @@
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <children>
-            <TextField fx:id="textPassword" promptText="密码">
+            <TextField fx:id="txtUsername" promptText="用户名">
                <VBox.margin>
                   <Insets left="-20.0" right="-20.0" top="45.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="txtUsername" promptText="用户名">
+            <PasswordField fx:id="textPassword" promptText="密码">
                <VBox.margin>
                   <Insets left="-20.0" right="-20.0" top="10.0" />
                </VBox.margin>
-            </TextField>
+            </PasswordField>
          </children>
          <GridPane.margin>
             <Insets />
