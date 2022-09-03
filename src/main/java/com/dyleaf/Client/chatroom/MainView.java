@@ -10,6 +10,7 @@ import com.dyleaf.Dao.DbUtils;
 import com.dyleaf.Utils.AudioBase64Util;
 import com.dyleaf.Utils.AudioRecognition;
 import com.dyleaf.Utils.AudioRecorder;
+import com.dyleaf.Utils.PhotoBase64Util;
 import com.dyleaf.bean.ClientUser;
 import com.dyleaf.bean.Message;
 import com.dyleaf.bean.OssPutObject;
@@ -278,6 +279,32 @@ public class MainView implements ControlledStage, Initializable {
 
     }
 
+    //图片传输按钮
+    @FXML
+    public void onPhotoBtnClicked(MouseEvent mouseEvent) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save file");
+        File file = fileChooser.showOpenDialog(stage);
+        System.out.println(file);
+        if(file != null){
+            String photoContent = PhotoBase64Util.fileToBase64EncodeString(file);
+
+            HashMap map = new HashMap();
+            if (pattern == GROUP) {
+                map.put(COMMAND, COM_CHATALL);
+                map.put(SPEAKER, model.getThisUser());
+            } else if (pattern == SINGLE) {
+                map.put(COMMAND, COM_CHATWITH);
+                map.put(RECEIVER, seletUser);
+                map.put(SPEAKER, model.getThisUser());
+            }
+            map.put(CONTENT, photoContent);
+            map.put(MESSAGETYPE,PHOTOTYPE);
+            model.sentMessage(gson.toJson(map));
+        }
+    }
+
+
     //头像选择按钮
     @FXML
     public void onProfileBtnClicked() throws IOException {
@@ -396,6 +423,8 @@ public class MainView implements ControlledStage, Initializable {
     }
 
 
+
+
     //-------------------渲染部分-----------------------
 
     //左边的一个个单个的联系人
@@ -481,6 +510,15 @@ public class MainView implements ControlledStage, Initializable {
                             //String recognise = AudioRecognition.recognise();
                             txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[音频]： "+item.getContent()));
                             //txtContent = new TextFlow(EmojiDisplayer.createEmojiAndTextNode("[音频]： "+recognise));
+                        }else if((item.getType()!=null)&&(item.getType().equals(PHOTOTYPE))){
+                            /**
+                             * TODO 渲染图片
+                             **/
+                            try {
+                                txtContent = new TextFlow(EmojiDisplayer.createPhotoNode(item.getContent()));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                         else {
                             //如果不是文件类型，则正常渲染。

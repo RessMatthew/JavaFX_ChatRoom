@@ -1,13 +1,16 @@
 package com.dyleaf.Client.emojis;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Queue;
 
 
-import com.dyleaf.Client.emojis.Emoji;
-import com.dyleaf.Client.emojis.EmojiHandler;
-import com.dyleaf.Client.emojis.ImageCache;
+
+import com.dyleaf.Utils.PhotoBase64Util;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -44,6 +47,22 @@ public class EmojiDisplayer {
 	}
 
 	/**
+	 * 将字符串解析为图片节点
+	 * @param content 图片base64编码字符串
+	 * @return
+	 */
+	public static Node createPhotoNode(String content) throws IOException {
+		byte[] bytes = PhotoBase64Util.getBytes(content);
+		InputStream in = new ByteArrayInputStream(bytes);
+		Image image = new Image(in);
+		ImageView imageView = new ImageView(image);
+
+		StackPane stackPane = new StackPane();
+		stackPane.getChildren().add(imageView);
+		return stackPane;
+	}
+
+	/**
 	 * 创建emoji图片节点
 	 *
 	 * @param emoji
@@ -71,6 +90,8 @@ public class EmojiDisplayer {
 		return stackPane;
 	}
 
+
+
 	/**
 	 * 创建文本节点
 	 *
@@ -92,4 +113,6 @@ public class EmojiDisplayer {
 	private static String getEmojiImagePath(String hexStr) {
 		return "/emoji/png_40/" + hexStr + ".png";
 	}
+
+
 }

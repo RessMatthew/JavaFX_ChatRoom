@@ -7,6 +7,7 @@ public class Constants {
 
     public final static String FILETYPE = "file";
     public final static String VOICETYPE = "voice";
+    public final static String PHOTOTYPE = "photo";
     public final static String ORDINARYMESSAGE = "odinaryMessage";
 
     //-------------私聊还是公屏发消息----------------

@@ -81,6 +81,7 @@
                               <Insets left="350.0" />
                            </HBox.margin>
                         </Button>
+                        <Button fx:id="btnPhoto" mnemonicParsing="false" onMouseClicked="#onPhotoBtnClicked" text="P" />
                         <Button fx:id="btnFile" mnemonicParsing="false" onAction="#onFileBtnClicked" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: transparent;">
                            <HBox.margin>
                               <Insets />

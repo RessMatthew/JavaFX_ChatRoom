@@ -1,0 +1,105 @@
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision c5f066a1175abdea6726d384216da751f9c46c58)
++++ b/.idea/dataSources.local.xml	(date 1662171134830)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="dataSourceStorageLocal" created-in="IU-221.6008.13">
++  <component name="dataSourceStorageLocal" created-in="IU-212.5457.46">
+     <data-source name="wechat@localhost" uuid="80a5789a-fe3d-4b33-b7a1-6ba827a4c7d1">
+       <database-info product="MySQL" version="5.7.22-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MYSQL" exact-version="5.7.22">
+         <extra-name-characters>#@</extra-name-characters>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c5f066a1175abdea6726d384216da751f9c46c58)
++++ b/.idea/workspace.xml	(date 1662184650611)
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ArtifactsWorkspaceSettings">
+     <artifacts-to-build>
+-      <artifact name="Client_1.12.249.224:jar" />
++      <artifact name="Clinet_101.34.37.235:jar" />
+     </artifacts-to-build>
+   </component>
+   <component name="AutoImportSettings">
+@@ -10,10 +10,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="修复小bug">
++      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/emoji.json" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/chatroom/MainView.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Utils/AudioBase64Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Utils/AudioBase64Util.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/emojis/EmojiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/emojis/EmojiHandler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dyleaf/Client/model/ClientModel.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/test.wav" beforeDir="false" afterPath="$PROJECT_DIR$/test.wav" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -319,6 +321,7 @@
+   </component>
+   <component name="PropertiesComponent">
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="nodejs_package_manager_path" value="npm" />
+     <property name="project.structure.last.edited" value="Artifacts" />
+@@ -540,6 +543,10 @@
+       <workItem from="1662088723138" duration="10025000" />
+       <workItem from="1662104683192" duration="1760000" />
+       <workItem from="1662104763816" duration="1229000" />
++      <workItem from="1662132845921" duration="2604000" />
++      <workItem from="1662170132928" duration="436000" />
++      <workItem from="1662171080947" duration="1054000" />
++      <workItem from="1662180732974" duration="3807000" />
+     </task>
+     <task id="LOCAL-00001" summary="新增文件传输&#10;新增些许注释">
+       <created>1662031929969</created>
+Index: src/main/java/com/dyleaf/Client/model/ClientModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/dyleaf/Client/model/ClientModel.java b/src/main/java/com/dyleaf/Client/model/ClientModel.java
+--- a/src/main/java/com/dyleaf/Client/model/ClientModel.java	(revision c5f066a1175abdea6726d384216da751f9c46c58)
++++ b/src/main/java/com/dyleaf/Client/model/ClientModel.java	(date 1662171134810)
+@@ -305,8 +305,8 @@
+      */
+     public boolean CheckLogin(String username, String password, StringBuffer buf, int type) {
+         //this.IP = IP; //bind server IP
+-        this.IP="1.12.249.224";
+-//        this.IP="101.34.37.235";
++//        this.IP="1.12.249.224";
++        this.IP="101.34.37.235";
+         Map<Integer, Object> map;
+         try {
+             //针对多次尝试登录
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision c5f066a1175abdea6726d384216da751f9c46c58)
++++ b/.idea/compiler.xml	(date 1662171266719)
+@@ -20,7 +20,7 @@
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+-      <module name="WeChat" target="1.8" />
++      <module name="WeChat" target="8" />
+     </bytecodeTargetLevel>
+   </component>
+ </project>
+\ No newline at end of file
