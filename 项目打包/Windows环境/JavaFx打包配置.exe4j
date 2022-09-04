@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exe4j version="6.0.1" transformSequenceNumber="2">
-  <directoryPresets config="C:/Users/aier/Desktop" />
-  <application name="JavaFX网络聊天室" distributionSourceDir="C:/Users/aier/Desktop">
+  <directoryPresets config="C:/临时" />
+  <application name="JavaFX网络聊天室" distributionSourceDir="C:/临时">
     <languages>
       <principalLanguage id="en" customLocalizationFile="" />
     </languages>
   </application>
-  <executable name="JavaFx网络聊天室" type="2" iconSet="false" iconFile="" executableDir="" redirectStderr="true" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true" dpiAware="java9+" amd64="true">
+  <executable name="JavaFx网络聊天室" type="2" iconSet="true" iconFile="C:/临时/icon.ico" executableDir="." redirectStderr="true" stderrFile="error.log" stderrMode="overwrite" redirectStdout="false" stdoutFile="output.log" stdoutMode="overwrite" failOnStderrOutput="true" executableMode="1" changeWorkingDirectory="true" workingDirectory="." singleInstance="false" serviceStartType="2" serviceDependencies="" serviceDescription="" jreLocation="" executionLevel="asInvoker" checkConsoleParameter="false" globalSingleInstance="false" singleInstanceActivate="true" dpiAware="java9+" amd64="true">
     <messageSet />
     <versionInfo include="false" fileVersion="" fileDescription="" legalCopyright="" internalName="" productName="" companyName="" productVersion="" />
   </executable>
@@ -23,7 +23,7 @@
       <envVar name="JDK_HOME" />
     </searchSequence>
     <classPath>
-      <archive location="C:/Users/aier/Desktop/WeChat.jar" failOnError="false" />
+      <archive location="C:/临时/WeChat.jar" failOnError="false" />
     </classPath>
     <modulePath />
     <nativeLibraryDirectories />
