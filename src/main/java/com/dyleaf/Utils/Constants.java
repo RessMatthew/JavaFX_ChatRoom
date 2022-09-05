@@ -3,6 +3,12 @@ package com.dyleaf.Utils;
 
 public class Constants {
 
+    //----------------服务端IP地址---------------
+    public final static String SERVERHOSTIP = "127.0.0.1";
+    //1.12.249.224
+    //101.34.37.235
+    //127.0.0.1
+
     //----------------文件类型常量----------------
 
     public final static String FILETYPE = "file";

@@ -46,6 +46,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
+import static com.dyleaf.Utils.AvatarUtil.getUserAvatarByUsername;
 import static com.dyleaf.Utils.Constants.*;
 import static com.dyleaf.Utils.Constants.CONTENT;
 import static com.dyleaf.Utils.BinUtil.*;
@@ -99,6 +100,8 @@ public class MainView implements ControlledStage, Initializable {
 //        }
 //        return stage;
 //    }
+
+    private static HashMap<String, Image> images = new HashMap<String, Image>();
 
     public static MainView getInstance() {
         return instance;
@@ -223,23 +226,7 @@ public class MainView implements ControlledStage, Initializable {
 
     //加载头像
     private void loadProfileImage(String username){
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet result = null;
-        String sql="select image from ChatUser where name=?";
-        String profile=null;//用户头像
-        try{
-            conn = DbUtils.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setString(   1, username);
-            result = ps.executeQuery();
-            if (result.next())
-                profile=result.getString("image");
-        }catch(SQLException e){
-            e.printStackTrace();
-        }finally{
-            DbUtils.close(result, ps, conn);
-        }
+        String profile = getUserAvatarByUsername(username);
         String styleSheet="-fx-graphic:url("+profile+")";
         btnProfile.setStyle(styleSheet);
     }
@@ -436,28 +423,19 @@ public class MainView implements ControlledStage, Initializable {
                 @Override
                 public void run() {
                     if (item != null) {
-                        //加载列表用户头像
-                        Connection conn = null;
-                        PreparedStatement ps = null;
-                        ResultSet result = null;
-                        String sql="select image from ChatUser where name=?";
-                        String profile=null;//用户头像
-                        try{
-                            conn = DbUtils.getConnection();
-                            ps = conn.prepareStatement(sql);
-                            ps.setString(   1, item.getUserName());
-                            result = ps.executeQuery();
-                            if (result.next())
-                                profile=result.getString("image");
-                        }catch(SQLException e){
-                            e.printStackTrace();
-                        }finally{
-                            DbUtils.close(result, ps, conn);
-                        }
-                        if (profile==null)
+
+                        String username = item.getUserName();
+                        String profile = getUserAvatarByUsername(username);
+                        if (profile==null){
                             profile="image/group.png";
+                        }
+                        if (!images.containsKey(profile)) {
+                            System.out.println("url第一次"+username);
+                            images.put(profile, new Image(profile));
+                        }
+                        ImageView imageHead = new ImageView(images.get(profile));
+//                        ImageView imageHead = new ImageView(profile);
                         HBox hbox = new HBox();
-                        ImageView imageHead = new ImageView(new Image(profile));
                         imageHead.setFitHeight(20);
                         imageHead.setFitWidth(20);
 
@@ -533,24 +511,17 @@ public class MainView implements ControlledStage, Initializable {
 //                        image.setFitHeight(20);
 //                        image.setFitWidth(20);
                         //用户头像
-                        Connection conn = null;
-                        PreparedStatement ps = null;
-                        ResultSet result = null;
-                        String sql="select image from ChatUser where name=?";
-                        String profile=null;//用户头像
-                        try{
-                            conn = DbUtils.getConnection();
-                            ps = conn.prepareStatement(sql);
-                            ps.setString(   1, item.getSpeaker());
-                            result = ps.executeQuery();
-                            if (result.next())
-                                profile=result.getString("image");
-                        }catch(SQLException e){
-                            e.printStackTrace();
-                        }finally{
-                            DbUtils.close(result, ps, conn);
+
+                        String username = item.getSpeaker();
+                        String profile = getUserAvatarByUsername(username);
+                        if(profile==null){
+                            profile="image/group.png";
                         }
-                        ImageView image = new ImageView(new Image(profile));
+                        if (!images.containsKey(profile)) {
+                            images.put(profile, new Image(profile));
+                        }
+                        ImageView image = new ImageView(images.get(profile));
+//                        ImageView image = new ImageView(profile);
                         image.setFitHeight(20);
                         image.setFitWidth(20);
                         hbox.getChildren().addAll(image, labUser);

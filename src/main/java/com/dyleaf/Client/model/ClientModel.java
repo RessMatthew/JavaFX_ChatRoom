@@ -304,9 +304,9 @@ public class ClientModel {
      * @return
      */
     public boolean CheckLogin(String username, String password, StringBuffer buf, int type) {
-        //this.IP = IP; //bind server IP
-//        this.IP="1.12.249.224";
-        this.IP="101.34.37.235";
+
+        this.IP = SERVERHOSTIP;
+
         Map<Integer, Object> map;
         try {
             //针对多次尝试登录
